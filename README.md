@@ -1,6 +1,7 @@
 # Subscription Setup
 
 This repository contains scripts to help setup new Azure subscriptions quickly.
+This includes a devcontainer with `az`, `azd`, `jq`, and `powershell` installed.
 
 ## Scripts
 
