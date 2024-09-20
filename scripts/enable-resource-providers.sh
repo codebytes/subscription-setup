@@ -1,7 +1,11 @@
+# Ensure you are logged in to Azure
+if [ -z "$(az account show)" ]; then
+    echo "You are not logged in. Please run 'az login' or 'az login --use-device-code' first."
+    exit 1
+fi
+
 # Get the list of all providers
-#providers=$(az provider list --query "[].namespace" -o tsv)
 providers=$(az provider list --query "[?registrationState!='Registered'].namespace" -o tsv)
-#echo "$providers"
 
 # Loop through each provider and enable it
 for provider in $providers; do
